@@ -10,3 +10,5 @@ export * from "./NavbarSecondary.component";
 export * from "./Logo.component";
 export * from "./Seo.component";
 export * from "./Card.component";
+export * from "./TitleContent.component";
+export * from "./Searching.component";

@@ -12,7 +12,7 @@ export const NavigationBarItemComponent = ({ icon, path }) => {
 	const isActive = router.pathname === path;
 
 	return (
-		<Box fontSize={"1.5rem"} onClick={onClick}
+		<Box fontSize={"1.6rem"} onClick={onClick}
 			color={isActive ? "blue" : "dark"}
 			cursor={"pointer"}
 			className={"opacity icon-navigation-menu" + (isActive ? " icon-effect" : "")}
@@ -21,6 +21,7 @@ export const NavigationBarItemComponent = ({ icon, path }) => {
 			display={"flex"}
 			alignItems={"center"}
 			justifyContent={"center"}
+			transition={"all 0.2s ease-in-out"}
 		>
 			{icon}
 		</Box>

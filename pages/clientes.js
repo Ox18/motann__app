@@ -8,9 +8,15 @@ import {
 	Td,
 	Th,
 	Button,
-	Heading
+	Heading,
 } from "@chakra-ui/react";
-import { Card, ContentLayout, MainLayout } from "components";
+import {
+	Card,
+	ContentLayout,
+	MainLayout,
+	Searching,
+	TitleContent,
+} from "components";
 import { BiTrash, BiEdit, BiInfoCircle, BiUserPlus } from "react-icons/bi";
 
 export default function Home() {
@@ -21,6 +27,7 @@ export default function Home() {
 			}}
 		>
 			<ContentLayout>
+				<TitleContent label={"Clientes"} />
 				<Box
 					display={["flex", "flex", "grid", "grid"]}
 					gridTemplateColumns={"auto 400px"}
@@ -34,10 +41,7 @@ export default function Home() {
 							mb={"20px"}
 							alignItems={"center"}
 						>
-							<Heading
-								fontSize={"xl"}
-								color={"dark"}
-							>
+							<Heading fontSize={"xl"} color={"dark"}>
 								Lista de Clientes
 							</Heading>
 							<Button variant={"theme-color-white"} leftIcon={<BiUserPlus />}>
@@ -83,7 +87,11 @@ export default function Home() {
 							</Table>
 						</TableContainer>
 					</Card>
-					<Card>ga</Card>
+					<Card>
+						<Searching
+							placeholder={"Nombre del cliente"}
+						/>
+					</Card>
 				</Box>
 			</ContentLayout>
 		</MainLayout>

@@ -34,7 +34,6 @@ export const NavigationBar = () => {
 					icon={<BiShoppingBag />}
 					isLast
 				/>
-				<NavigationBarItemComponent path={"/configuracion"} icon={<BiCog />} />
 				<NavigationBarItemComponent
 					path={"/profile"}
 					icon={
