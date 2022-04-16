@@ -15,7 +15,12 @@ export const NavigationBarItemComponent = ({ icon, path }) => {
 		<Box fontSize={"1.5rem"} onClick={onClick}
 			color={isActive ? "blue" : "dark"}
 			cursor={"pointer"}
-			className={"opacity"}
+			className={"opacity icon-navigation-menu" + (isActive ? " icon-effect" : "")}
+			height={"100%"}
+			width={"50px"}
+			display={"flex"}
+			alignItems={"center"}
+			justifyContent={"center"}
 		>
 			{icon}
 		</Box>
