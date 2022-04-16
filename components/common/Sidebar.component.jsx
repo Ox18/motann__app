@@ -1,7 +1,7 @@
 import { Box, Heading } from "@chakra-ui/react";
 import React from "react";
 import { SidebarItemComponent } from "./SidebarItem.component";
-import { BiShoppingBag, BiUserCircle, BiBook, BiCog } from "react-icons/bi";
+import { BiShoppingBag, BiUserCircle, BiBook, BiCog, BiGroup } from "react-icons/bi";
 import { SidebarProfileComponent } from "./SidebarProfile.component";
 import { SidebarThemeColorComponent } from "./SidebarThemeColor.component";
 
@@ -29,7 +29,7 @@ export const Sidebar = () => {
 						/>
 						<SidebarItemComponent
 							label={"Clientes"}
-							icon={BiUserCircle}
+							icon={BiGroup}
 							path={"/clientes"}
 						/>
 

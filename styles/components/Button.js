@@ -13,7 +13,8 @@ export const Button = {
         "theme-color-white": {
             bg: "white",
             border: "2px solid #f8f8f8",
-            color: "#acacac"
+            color: "#acacac",
+            fontSize: "sm"
         }
     },
 	defaultProps: {},
