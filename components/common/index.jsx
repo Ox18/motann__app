@@ -13,3 +13,4 @@ export * from "./Card.component";
 export * from "./TitleContent.component";
 export * from "./Searching.component";
 export * from "./RowCliente.component";
+export * from "./ModalNewCliente.component";

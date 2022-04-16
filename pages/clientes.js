@@ -6,7 +6,6 @@ import {
 	Tbody,
 	Box,
 	Tr,
-	Td,
 	Th,
 	Button,
 	Heading,
@@ -17,9 +16,9 @@ import {
 	ContentLayout,
 	MainLayout,
 	RowCliente,
-	RowLoading,
 	Searching,
 	TitleContent,
+	ModalNewCliente
 } from "components";
 import { useFetchAndLoad, useAsync } from "hooks";
 import { BiPlusCircle } from "react-icons/bi";
@@ -31,7 +30,14 @@ export default function Home() {
 
 	const getApiData = async () => await callEndpoint(getClientes());
 
-	useAsync(getApiData, setClientes, () => {});
+	const [openModalNewCliente, setOpenModalNewCliente] = useState(false);
+
+	
+	useAsync(getApiData, setClientes, () => {}, []);
+
+	const onSuccessAddCliente = (data) => {
+		setClientes([...clientes, data]);
+	}
 
 	return (
 		<MainLayout
@@ -60,9 +66,15 @@ export default function Home() {
 							<Button
 								variant={"theme-color-white"}
 								leftIcon={<BiPlusCircle fontSize={"1.3rem"} />}
+								onClick={() => setOpenModalNewCliente(true)}
 							>
 								Añadir
 							</Button>
+							<ModalNewCliente
+								isOpen={openModalNewCliente}
+								onClose={() => setOpenModalNewCliente(false)}
+								onSuccess={onSuccessAddCliente}
+							/>
 						</Box>
 						<TableContainer>
 							<Table size="sm" variant={"unstyled"}>

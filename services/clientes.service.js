@@ -10,3 +10,11 @@ export const getClientes = () => {
 		controller,
 	};
 };
+
+export const createCliente = (cliente) => {
+	return axios.post("/api/clientes", cliente);
+};
+
+export const deleteCliente = (id) => {
+	return axios.delete(`/api/clientes/${id}`);
+};
