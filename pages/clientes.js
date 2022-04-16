@@ -17,7 +17,7 @@ import {
 	Searching,
 	TitleContent,
 } from "components";
-import { BiTrash, BiEdit, BiInfoCircle, BiUserPlus } from "react-icons/bi";
+import { BiTrash, BiEdit, BiInfoCircle, BiPlusCircle } from "react-icons/bi";
 
 export default function Home() {
 	return (
@@ -42,10 +42,12 @@ export default function Home() {
 							alignItems={"center"}
 						>
 							<Heading fontSize={"xl"} color={"dark"}>
-								Lista de Clientes
+								Clientes
 							</Heading>
-							<Button variant={"theme-color-white"} leftIcon={<BiUserPlus />}>
-								Añadir cliente
+							<Button variant={"theme-color-white"} leftIcon={<BiPlusCircle
+								fontSize={"1.3rem"}
+							/>}>
+								Añadir
 							</Button>
 						</Box>
 						<TableContainer>

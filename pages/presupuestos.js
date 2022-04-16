@@ -39,7 +39,7 @@ export default function Home() {
 							alignItems={"center"}
 						>
 							<Heading fontSize={"xl"} color={"dark"}>
-								Lista de Clientes
+								Presupuestos
 							</Heading>
 							<Button variant={"theme-color-white"} leftIcon={<BiPlusCircle
 								fontSize={"1.3rem"}
