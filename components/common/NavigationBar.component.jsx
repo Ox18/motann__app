@@ -1,6 +1,6 @@
 import { Avatar, Box } from "@chakra-ui/react";
 import React from "react";
-import { BiShoppingBag, BiUserCircle, BiBook, BiCog } from "react-icons/bi";
+import { BiShoppingBag, BiUserCircle, BiBook, BiCog, BiGroup } from "react-icons/bi";
 import { NavigationBarItemComponent } from "./NavigationBarItem.component";
 
 export const NavigationBar = () => {
@@ -27,7 +27,7 @@ export const NavigationBar = () => {
 				<NavigationBarItemComponent path={"/presupuestos"} icon={<BiBook />} />
 				<NavigationBarItemComponent
 					path={"/clientes"}
-					icon={<BiUserCircle />}
+					icon={<BiGroup />}
 				/>
 				<NavigationBarItemComponent
 					path={"/materiales"}
