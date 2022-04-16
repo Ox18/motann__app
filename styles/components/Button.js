@@ -8,6 +8,12 @@ export const Button = {
         "theme-color-active": {
             bg: "white",
             borderRadius: "20px"
+        },
+        // btn white action
+        "theme-color-white": {
+            bg: "white",
+            border: "2px solid #f8f8f8",
+            color: "#acacac"
         }
     },
 	defaultProps: {},
