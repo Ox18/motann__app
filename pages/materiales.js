@@ -44,9 +44,10 @@ export default function Home() {
 							<Heading fontSize={"xl"} color={"dark"}>
 								Materiales
 							</Heading>
-							<Button variant={"theme-color-white"} leftIcon={<BiPlusCircle
-								fontSize={"1.3rem"}
-							/>}>
+							<Button
+								variant={"theme-color-white"}
+								leftIcon={<BiPlusCircle fontSize={"1.3rem"} />}
+							>
 								Añadir
 							</Button>
 						</Box>
@@ -56,9 +57,7 @@ export default function Home() {
 									<Tr>
 										<Th>Nro</Th>
 										<Th>Nombre</Th>
-										<Th display={["none", "none", "none", "table-cell"]}>
-											Dirección
-										</Th>
+										<Th>Cliente</Th>
 										<Th>Acciones</Th>
 									</Tr>
 								</Thead>
@@ -66,9 +65,7 @@ export default function Home() {
 									<Tr>
 										<Td>1</Td>
 										<Td>Wilmer Delgado</Td>
-										<Td display={["none", "none", "none", "table-cell"]}>
-											Los olivos
-										</Td>
+										<Td>Wilmer Delgado</Td>
 										<Td display={"flex"} gap={"5px"}>
 											<Button
 												size="xs"
@@ -90,9 +87,7 @@ export default function Home() {
 						</TableContainer>
 					</Card>
 					<Card>
-						<Searching 
-							placeholder={"Nombre de la lista"}
-						/>
+						<Searching placeholder={"Nombre de la lista"} />
 					</Card>
 				</Box>
 			</ContentLayout>

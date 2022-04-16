@@ -53,6 +53,7 @@ export default function Home() {
 									<Tr>
 										<Th>Nro</Th>
 										<Th>Nombre</Th>
+										<Th>Cliente</Th>
 										<Th display={["none", "none", "none", "table-cell"]}>
 											Dirección
 										</Th>
@@ -66,6 +67,7 @@ export default function Home() {
 										<Td display={["none", "none", "none", "table-cell"]}>
 											Los olivos
 										</Td>
+										<Td>Wilmer Delgado</Td>
 										<Td display={"flex"} gap={"5px"}>
 											<Button
 												size="xs"

@@ -1,17 +1,14 @@
 import { MainLayout } from "components";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-
-export default function Home() {
-	const router = useRouter();
-
-	useEffect(() => {
-		router.push("/presupuestos");
+export default function Home() {	const router = useRouter();
 	}, []);
-
-	return (
-		<MainLayout>
-			<h1>Hello Next.js</h1>
-		</MainLayout>
-	);
-}
+	return (		<MainLayout>			<h1>Hello Next.js</h1>		</MainLayout>	);
+}export { default as MyApp } from './_app';
+export { default as MyDocument } from './_document';
+export { default as Home } from './clientes';
+export { default as Home } from './configuracion';
+export { default as Home } from './materiales';
+export { default as Home } from './presupuestos';
+export { default as Home } from './profile';
+export * from './api';

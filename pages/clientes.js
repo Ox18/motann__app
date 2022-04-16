@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import {
 	Table,
 	TableContainer,
@@ -9,17 +10,29 @@ import {
 	Th,
 	Button,
 	Heading,
+	Spinner,
 } from "@chakra-ui/react";
 import {
 	Card,
 	ContentLayout,
 	MainLayout,
+	RowCliente,
+	RowLoading,
 	Searching,
 	TitleContent,
 } from "components";
-import { BiTrash, BiEdit, BiInfoCircle, BiPlusCircle } from "react-icons/bi";
+import { useFetchAndLoad, useAsync } from "hooks";
+import { BiPlusCircle } from "react-icons/bi";
+import { getClientes } from "services";
 
 export default function Home() {
+	const { loading, callEndpoint } = useFetchAndLoad();
+	const [clientes, setClientes] = useState([]);
+
+	const getApiData = async () => await callEndpoint(getClientes());
+
+	useAsync(getApiData, setClientes, () => {});
+
 	return (
 		<MainLayout
 			seo={{
@@ -44,9 +57,10 @@ export default function Home() {
 							<Heading fontSize={"xl"} color={"dark"}>
 								Clientes
 							</Heading>
-							<Button variant={"theme-color-white"} leftIcon={<BiPlusCircle
-								fontSize={"1.3rem"}
-							/>}>
+							<Button
+								variant={"theme-color-white"}
+								leftIcon={<BiPlusCircle fontSize={"1.3rem"} />}
+							>
 								Añadir
 							</Button>
 						</Box>
@@ -56,43 +70,28 @@ export default function Home() {
 									<Tr>
 										<Th>Nro</Th>
 										<Th>Nombre</Th>
-										<Th display={["none", "none", "none", "table-cell"]}>
-											Dirección
+										<Th display={["none", "none", "block", "block"]}>
+											Provincia
 										</Th>
+										<Th>Dirección</Th>
 										<Th>Acciones</Th>
 									</Tr>
 								</Thead>
 								<Tbody>
-									<Tr>
-										<Td>1</Td>
-										<Td>Wilmer Delgado</Td>
-										<Td display={["none", "none", "none", "table-cell"]}>
-											Los olivos
-										</Td>
-										<Td display={"flex"} gap={"5px"}>
-											<Button
-												size="xs"
-												colorScheme={"facebook"}
-												variant="solid"
-											>
-												<BiInfoCircle />
-											</Button>
-											<Button size="xs" colorScheme={"yellow"} variant="solid">
-												<BiEdit />
-											</Button>
-											<Button size="xs" colorScheme={"red"} variant="solid">
-												<BiTrash />
-											</Button>
-										</Td>
-									</Tr>
+									{clientes.map((cliente, index) => (
+										<RowCliente
+											key={cliente.id}
+											{...cliente}
+											index={index + 1}
+										/>
+									))}
+									{loading && <Spinner />}
 								</Tbody>
 							</Table>
 						</TableContainer>
 					</Card>
 					<Card>
-						<Searching
-							placeholder={"Nombre del cliente"}
-						/>
+						<Searching placeholder={"Nombre del cliente"} />
 					</Card>
 				</Box>
 			</ContentLayout>

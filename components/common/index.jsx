@@ -12,3 +12,4 @@ export * from "./Seo.component";
 export * from "./Card.component";
 export * from "./TitleContent.component";
 export * from "./Searching.component";
+export * from "./RowCliente.component";
